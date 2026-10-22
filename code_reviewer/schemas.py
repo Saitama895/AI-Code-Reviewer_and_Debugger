@@ -9,5 +9,5 @@ class Finding(BaseModel):
     explanation : str = Field(min_length=1, description="Explanation of the bug")
     impact : str = Field(min_length=1, description="it tells what could break or go wrong")
     suggested_fix : str | None = Field(..., description="Proposed fix or None if no safe fix is known")
-    sources : set[Literal["ruff", "bandit", "llm"]]
+    sources : set[Literal["ruff", "bandit", "llm", "ast"]]
     status : Literal["confirmed", "likely", "needs_review", "unsupported"]
